@@ -1,0 +1,656 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HAWK ACCOUNTAX LTD | Accounting & Tax Services</title>
+  <meta name="description" content="HAWK ACCOUNTAX LTD provides accounting, bookkeeping, payroll, VAT and tax services for individuals and businesses." />
+  <meta name="theme-color" content="#0b1220" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="HAWK ACCOUNTAX LTD" />
+  <meta property="og:description" content="Accounting & Tax Services" />
+  <meta property="og:type" content="website" />
+
+  <style>
+    :root{
+      --bg:#0b0b0f;
+      --panel:#111117;
+      --card:#14141c;
+      --text:#f5f5f7;
+      --muted:#b8b8c2;
+      --line:rgba(255,255,255,.08);
+      --brand:#c6a85b;
+      --brand2:#e6c77a;
+      --gold-gradient: linear-gradient(135deg,#c6a85b,#e6c77a);
+      --shadow: 0 25px 60px rgba(0,0,0,.55);
+      --radius: 20px;
+      --radius2: 14px;
+      --max: 1120px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{
+      margin:0;
+      font-family: "Georgia", "Times New Roman", serif;
+      color:var(--text);
+      background: radial-gradient(circle at 20% 10%, rgba(198,168,91,.08), transparent 40%),
+                  radial-gradient(circle at 80% 0%, rgba(230,199,122,.06), transparent 40%),
+                  #0b0b0f;
+      line-height:1.6;
+      letter-spacing:.3px;
+    }
+
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; display:block}
+
+    .container{max-width:var(--max); margin:0 auto; padding:0 20px}
+
+    /* Top bar */
+    header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(180deg, rgba(11,18,32,.85), rgba(11,18,32,.55));
+      border-bottom: 1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:16px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      min-width: 220px;
+    }
+    .brand .mark{
+      width:44px; height:44px;
+      border-radius: 50%;
+      overflow:hidden;
+      background: rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow: var(--shadow);
+      flex:0 0 auto;
+    }
+    .brand .name{
+      display:flex; flex-direction:column;
+      line-height:1.1;
+    }
+    .brand .name strong{font-size:14px; letter-spacing:.6px}
+    .brand .name span{font-size:12px; color:var(--muted)}
+
+    nav ul{list-style:none; margin:0; padding:0; display:flex; gap:16px; align-items:center}
+    nav a{
+      font-size:14px;
+      color:var(--muted);
+      padding:10px 12px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+    }
+    nav a:hover{color:var(--text); border-color: rgba(232,237,247,.14); background: rgba(255,255,255,.04)}
+
+    .cta{
+      display:flex; gap:10px; align-items:center;
+    }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(232,237,247,.14);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      font-size:14px;
+      cursor:pointer;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.06); border-color: rgba(232,237,247,.20)}
+    .btn.primary{
+      background: var(--gold-gradient);
+      border:none;
+      color:#111;
+      font-weight:600;
+      letter-spacing:.5px;
+    }
+    .btn.primary:hover{
+      filter:brightness(1.05);
+      transform: translateY(-2px);
+    }
+
+    .hamburger{display:none}
+
+    /* Hero */
+    .hero{
+      padding:90px 0 90px;
+      background:
+        linear-gradient(rgba(11,18,32,.65), rgba(11,18,32,.75)),
+        url('3a7b9ffc-0fd9-4d56-848d-c24ff4c42493.jfif') center/cover no-repeat;
+      border-radius:22px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:22px;
+      align-items:stretch;
+    }
+
+    .panel{
+      background: linear-gradient(145deg,#14141c,#101018);
+      border: 1px solid rgba(198,168,91,.15);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .hero .left{padding:28px}
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 12px;
+      border-radius: 999px;
+      background: rgba(125,211,252,.10);
+      border: 1px solid rgba(125,211,252,.18);
+      color: var(--text);
+      font-size:13px;
+    }
+    h1{
+      margin:18px 0 14px;
+      font-size: 52px;
+      line-height:1.1;
+      font-weight:500;
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing:1px;
+    }
+    .sub{
+      margin:0 0 18px;
+      color: var(--muted);
+      font-size:16px;
+      max-width: 62ch;
+    }
+
+    .hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin:14px 0 10px}
+
+    .trust{
+      display:flex; gap:14px; flex-wrap:wrap;
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size:13px;
+    }
+    .trust .pill{display:flex; align-items:center; gap:10px; padding:10px 12px; border-radius: 999px; background: rgba(255,255,255,.03); border: 1px solid rgba(232,237,247,.10)}
+
+    .hero .right{display:grid; grid-template-rows:auto 1fr}
+    .logo-card{padding:22px; display:flex; flex-direction:column; gap:14px}
+    .logo-wrap{
+      border-radius: 18px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(232,237,247,.12);
+      padding:18px;
+      display:flex; align-items:center; justify-content:center;
+      min-height: 180px;
+    }
+    .logo-wrap img{
+      width: 260px;
+      max-width: 100%;
+      height:auto;
+      filter: drop-shadow(0 10px 18px rgba(0,0,0,.35));
+    }
+    .company-meta{display:grid; gap:8px; color:var(--muted); font-size:13px}
+    .company-meta strong{color:var(--text); font-weight:600}
+
+    /* Sections */
+    section{padding:34px 0}
+    .section-head{display:flex; justify-content:space-between; align-items:flex-end; gap:16px; margin-bottom:16px}
+    .section-head h2{margin:0; font-size:28px; letter-spacing:-.4px}
+    .section-head p{margin:0; color:var(--muted); max-width:60ch}
+
+    .cards{display:grid; grid-template-columns: repeat(12, 1fr); gap:14px}
+    .card{
+      grid-column: span 4;
+      padding:22px;
+      border-radius: var(--radius);
+      background: linear-gradient(145deg,#14141c,#101018);
+      border: 1px solid rgba(198,168,91,.12);
+      box-shadow: 0 20px 50px rgba(0,0,0,.45);
+      min-height: 180px;
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .card:hover{
+      transform: translateY(-6px);
+      box-shadow: 0 30px 70px rgba(0,0,0,.6);
+    }
+    }
+    .card h3{margin:0 0 8px; font-size:18px}
+    .card p{margin:0; color:var(--muted); font-size:14px}
+
+    .card .tag{
+      display:inline-flex; align-items:center; gap:8px;
+      margin-bottom:10px;
+      padding:6px 10px;
+      border-radius: 999px;
+      font-size:12px;
+      border: 1px solid rgba(232,237,247,.12);
+      background: rgba(255,255,255,.03);
+      color: var(--muted);
+    }
+
+    /* About + contact */
+    .split{display:grid; grid-template-columns: 1fr 1fr; gap:14px}
+    .box{
+      padding:22px;
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(16,31,61,.70), rgba(15,27,51,.55));
+      border: 1px solid rgba(232,237,247,.12);
+      box-shadow: 0 14px 30px rgba(0,0,0,.25);
+    }
+    .box h3{margin:0 0 10px; font-size:20px}
+    .box p{margin:0 0 12px; color:var(--muted)}
+
+    .list{margin:0; padding-left:18px; color:var(--muted)}
+    .list li{margin:8px 0}
+
+    form{display:grid; gap:12px}
+    label{font-size:13px; color:var(--muted)}
+    input, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(232,237,247,.14);
+      background: rgba(0,0,0,.15);
+      color: var(--text);
+      outline:none;
+    }
+    textarea{min-height:120px; resize:vertical}
+
+    .fineprint{font-size:12px; color:rgba(232,237,247,.68)}
+
+    footer{
+      padding:26px 0 36px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+    }
+    .footer-grid{display:grid; grid-template-columns: 1fr auto; gap:14px; align-items:center}
+    .footer-grid a{color:var(--text)}
+
+    @keyframes pulse{
+      0%{transform:scale(1); box-shadow:0 10px 25px rgba(0,0,0,.30)}
+      50%{transform:scale(1.05); box-shadow:0 14px 34px rgba(0,0,0,.38)}
+      100%{transform:scale(1); box-shadow:0 10px 25px rgba(0,0,0,.30)}
+    }
+
+    .wa-icon{width:18px; height:18px; display:inline-block}
+    .wa-float{
+      position:fixed; bottom:20px; right:20px;
+      background:var(--wa);
+      color:#fff;
+      width:56px; height:56px;
+      display:flex; align-items:center; justify-content:center;
+      border-radius: 999px;
+      font-weight:700;
+      text-decoration:none;
+      z-index:999;
+      animation:pulse 1.6s ease-in-out infinite;
+      border: 1px solid rgba(255,255,255,.22);
+    }
+    .wa-float:hover{filter:brightness(1.05)}
+
+    /* Mobile */
+    @media (max-width: 900px){
+      .hero-grid{grid-template-columns: 1fr;}
+      .card{grid-column: span 6;}
+      h1{font-size: 38px}
+      .split{grid-template-columns: 1fr}
+    }
+    @media (max-width: 680px){
+      nav ul{display:none}
+      .hamburger{display:inline-flex}
+      .card{grid-column: span 12;}
+      h1{font-size: 34px}
+      .brand{min-width:auto}
+    }
+
+    /* Simple mobile menu */
+    .menu{
+      display:none;
+      padding: 0 0 14px;
+    }
+    .menu.open{display:block}
+    .menu a{display:block; padding:12px 10px; border-radius: 14px; color:var(--muted); border: 1px solid rgba(232,237,247,.10); background: rgba(255,255,255,.03); margin-top:10px}
+    .menu a:hover{color:var(--text); border-color: rgba(232,237,247,.18)}
+
+    /* Accessibility */
+    .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="#top" aria-label="HAWK ACCOUNTAX LTD home">
+          <div class="mark" aria-hidden="true">
+            <!-- Replace with your real logo file in the same folder (e.g., logo.jpg) -->
+            <img src="logo.jpg" alt="HAWK ACCOUNTAX LTD logo" />
+          </div>
+          <div class="name">
+            <strong>HAWK ACCOUNTAX LTD</strong>
+            <span>Accounting & Tax Services</span>
+          </div>
+        </a>
+
+        <nav aria-label="Primary">
+          <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="cta">
+          <a class="btn" href="mailto:office@hawkaccountax.co.uk">Email us</a>
+          <a class="btn" href="https://wa.me/447424630446?text=Hi%20there%2C%20I%20am%20interested%20in%20your%20services" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg class="wa-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M19.11 17.53c-.26-.13-1.54-.76-1.78-.85-.24-.09-.41-.13-.59.13-.18.26-.68.85-.83 1.03-.15.18-.3.2-.56.07-.26-.13-1.1-.41-2.09-1.31-.77-.69-1.29-1.54-1.44-1.8-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.45.13-.15.18-.26.26-.43.09-.18.04-.33-.02-.46-.07-.13-.59-1.42-.81-1.95-.21-.5-.42-.43-.59-.44l-.5-.01c-.18 0-.46.07-.7.33-.24.26-.92.9-.92 2.2s.94 2.55 1.07 2.73c.13.18 1.86 2.84 4.5 3.98.63.27 1.12.43 1.5.55.63.2 1.2.17 1.66.1.5-.07 1.54-.63 1.76-1.24.22-.61.22-1.13.15-1.24-.07-.11-.24-.18-.5-.31Z"/>
+              <path fill="currentColor" d="M16.02 3.2c-7.03 0-12.75 5.58-12.75 12.45 0 2.2.6 4.35 1.75 6.23L3.2 28.8l7.1-1.84c1.83.98 3.9 1.5 5.99 1.5 7.03 0 12.75-5.58 12.75-12.45S23.05 3.2 16.02 3.2Zm0 23.15c-1.93 0-3.82-.52-5.46-1.51l-.39-.23-4.22 1.09 1.12-4.05-.26-.41c-1.12-1.76-1.71-3.79-1.71-5.9 0-5.72 4.83-10.37 10.9-10.37 6.07 0 10.9 4.65 10.9 10.37 0 5.72-4.83 10.37-10.9 10.37Z"/>
+            </svg>
+            <span class="sr-only">WhatsApp</span>
+          </a>
+          <a class="btn" href="https://www.instagram.com/hawkaccountax?igsh=d3k5OXY3cGhiM3hn" target="_blank" rel="noopener">Instagram</a>
+          <button class="btn primary hamburger" id="menuBtn" type="button" aria-expanded="false" aria-controls="mobileMenu">
+            ☰ Menu
+          </button>
+        </div>
+      </div>
+
+      <div class="menu" id="mobileMenu" aria-label="Mobile">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="container">
+      <section class="hero" aria-label="Hero">
+        <div class="hero-grid">
+          <div class="panel left">
+            <div class="kicker">Private Client & Business Accounting</div>
+            <div style="margin-top:18px;font-size:14px;letter-spacing:4px;text-transform:uppercase;color:var(--brand2);font-weight:600;">
+              Precision. Discretion. Excellence.
+            </div>
+            <h1>Accounting and tax done properly—so you can focus on your business.</h1>
+            <p class="sub">
+              HAWK ACCOUNTAX LTD helps individuals, sole traders and limited companies stay compliant and make confident decisions—
+              with bookkeeping, payroll, VAT and tax support tailored to you.
+            </p>
+            <div class="hero-actions">
+              <a class="btn primary" href="#contact">Request a call back</a>
+              <a class="btn" href="#services">View services</a>
+            </div>
+            <div class="trust" aria-label="Highlights">
+              <div class="pill">📌 HMRC-ready records</div>
+              <div class="pill">🧾 VAT & returns</div>
+              <div class="pill">💷 Payroll support</div>
+            </div>
+          </div>
+
+          <aside class="panel right" aria-label="Company details">
+            <div class="logo-card">
+              <div class="logo-wrap">
+                <!-- Replace with your real logo file in the same folder (e.g., logo.jpg) -->
+                <img src="logo.jpg" alt="HAWK ACCOUNTAX LTD logo" />
+              </div>
+              <div class="company-meta">
+                <div><strong>Company:</strong> HAWK ACCOUNTAX LTD</div>
+                <div><strong>Company No.:</strong> 13784917</div>
+                <div><strong>Registered Office:</strong> 4 Charlton Street, Grays, England, RM20 4XU</div>
+                <div><strong>Email:</strong> <a href="mailto:office@hawkaccountax.co.uk">office@hawkaccountax.co.uk</a></div>
+                <div><strong>Instagram:</strong> <a href="https://www.instagram.com/hawkaccountax?igsh=d3k5OXY3cGhiM3hn" target="_blank" rel="noopener">@hawkaccountax</a></div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="services" aria-label="Services">
+        <div class="section-head">
+          <div>
+            <h2>Services</h2>
+            <p>Pick what you need—ongoing support or one-off help. If you’re not sure, tell us your situation and we’ll guide you.</p>
+          </div>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <div class="tag">Bookkeeping</div>
+            <h3>Monthly bookkeeping</h3>
+            <p>Accurate records, reconciliations and management-ready reports—kept tidy and compliant.</p>
+          </div>
+          <div class="card">
+            <div class="tag">Tax</div>
+            <h3>Self Assessment</h3>
+            <p>Preparation and submission of personal tax returns, with reminders and clear explanations.</p>
+          </div>
+          <div class="card">
+            <div class="tag">Limited Companies</div>
+            <h3>Accounts & CT600</h3>
+            <p>Year-end accounts and Corporation Tax filings—planned to reduce surprises.</p>
+          </div>
+          <div class="card">
+            <div class="tag">VAT</div>
+            <h3>VAT registration & returns</h3>
+            <p>Advice on schemes and Making Tax Digital-compatible submissions.</p>
+          </div>
+          <div class="card">
+            <div class="tag">Payroll</div>
+            <h3>Payroll & workplace pensions</h3>
+            <p>PAYE setup, payslips, RTI submissions and ongoing support.</p>
+          </div>
+          <div class="card">
+            <div class="tag">Support</div>
+            <h3>HMRC correspondence</h3>
+            <p>We can help you respond to letters, resolve queries and keep things moving.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" aria-label="About">
+        <div class="section-head">
+          <div>
+            <h2>About HAWK ACCOUNTAX LTD</h2>
+            <p>We focus on clarity, reliability and straight answers—so you always know where you stand.</p>
+          </div>
+        </div>
+
+        <div class="split">
+          <div class="box">
+            <h3>How we work</h3>
+            <p>
+              You’ll get a simple onboarding, clear checklists and dependable communication.
+              We can work remotely or in a way that suits your routine.
+            </p>
+            <ul class="list">
+              <li>Clear scope and fixed fees where possible</li>
+              <li>Plain-English guidance</li>
+              <li>Deadlines tracked and reminders sent</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>Who we help</h3>
+            <p>Individuals and businesses who want their accounts and tax handled correctly, without stress.</p>
+            <ul class="list">
+              <li>Sole traders & contractors</li>
+              <li>Limited companies</li>
+              <li>Landlords</li>
+              <li>Startups and growing businesses</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" aria-label="Contact">
+        <div class="section-head">
+          <div>
+            <h2>Contact</h2>
+            <p>Send a message and we’ll get back to you. Prefer email? Use the button below.</p>
+          </div>
+        </div>
+
+        <div class="split">
+          <div class="box">
+            <h3>Send a message</h3>
+            <form id="contactForm">
+              <div>
+                <label for="name">Name</label>
+                <input id="name" name="name" autocomplete="name" required />
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" required />
+              </div>
+              <div>
+                <label for="subject">Subject</label>
+                <input id="subject" name="subject" required />
+              </div>
+              <div>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+              </div>
+              <button class="btn primary" type="submit">Open email draft</button>
+              <div class="fineprint">
+                This form opens your email app with a pre-filled message (no data is stored on this page).
+              </div>
+            </form>
+          </div>
+
+          <div class="box">
+            <h3>Company details</h3>
+            <p>
+              <strong>HAWK ACCOUNTAX LTD</strong><br />
+              Company number: <strong>13784917</strong><br />
+              Registered office: <strong>4 Charlton Street, Grays, England, RM20 4XU</strong>
+            </p>
+            <p>
+              Email: <a class="btn" href="mailto:office@hawkaccountax.co.uk">office@hawkaccountax.co.uk</a>
+              <a class="btn" href="https://wa.me/447424630446?text=Hi%20there%2C%20I%20am%20interested%20in%20your%20services" target="_blank" rel="noopener" aria-label="WhatsApp">
+                <svg class="wa-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+                  <path fill="currentColor" d="M19.11 17.53c-.26-.13-1.54-.76-1.78-.85-.24-.09-.41-.13-.59.13-.18.26-.68.85-.83 1.03-.15.18-.3.2-.56.07-.26-.13-1.1-.41-2.09-1.31-.77-.69-1.29-1.54-1.44-1.8-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.45.13-.15.18-.26.26-.43.09-.18.04-.33-.02-.46-.07-.13-.59-1.42-.81-1.95-.21-.5-.42-.43-.59-.44l-.5-.01c-.18 0-.46.07-.7.33-.24.26-.92.9-.92 2.2s.94 2.55 1.07 2.73c.13.18 1.86 2.84 4.5 3.98.63.27 1.12.43 1.5.55.63.2 1.2.17 1.66.1.5-.07 1.54-.63 1.76-1.24.22-.61.22-1.13.15-1.24-.07-.11-.24-.18-.5-.31Z"/>
+                  <path fill="currentColor" d="M16.02 3.2c-7.03 0-12.75 5.58-12.75 12.45 0 2.2.6 4.35 1.75 6.23L3.2 28.8l7.1-1.84c1.83.98 3.9 1.5 5.99 1.5 7.03 0 12.75-5.58 12.75-12.45S23.05 3.2 16.02 3.2Zm0 23.15c-1.93 0-3.82-.52-5.46-1.51l-.39-.23-4.22 1.09 1.12-4.05-.26-.41c-1.12-1.76-1.71-3.79-1.71-5.9 0-5.72 4.83-10.37 10.9-10.37 6.07 0 10.9 4.65 10.9 10.37 0 5.72-4.83 10.37-10.9 10.37Z"/>
+                </svg>
+                <span class="sr-only">WhatsApp</span>
+              </a>
+              <span class="fineprint">WhatsApp: +44 7424 630446</span>
+              <a class="btn" href="https://www.instagram.com/hawkaccountax?igsh=d3k5OXY3cGhiM3hn" target="_blank" rel="noopener">Instagram</a>
+            </p>
+            <p class="fineprint">
+              Disclaimer: Information on this website is for general guidance only and does not constitute professional advice.
+              Please contact us for advice specific to your circumstances.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+        <section id="gallery" aria-label="Gallery">
+        <div class="section-head">
+          <div>
+            <h2>Our Professional Approach</h2>
+            <p>A clean, precise and professional environment that reflects how we handle your accounts.</p>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="card" style="grid-column:span 6"><img src="3a7b9ffc-0fd9-4d56-848d-c24ff4c42493.jfif" alt="Professional workspace image"></div>
+          <div class="card" style="grid-column:span 6"><img src="020f959c-8ae5-4191-9824-973e7fb2b9db.jfif" alt="Minimal professional desk"></div>
+          <div class="card" style="grid-column:span 6"><img src="248097e8-d135-4a2e-a888-1b9190cc07d9.jfif" alt="Stationery and planning tools"></div>
+          <div class="card" style="grid-column:span 6"><img src="c3362cf6-423a-452b-8e85-4364e8abd4e6.jfif" alt="Notebook and pen"></div>
+          <div class="card" style="grid-column:span 12"><img src="ff6c4c07-9348-4c9f-a18c-4076453be3ed.jfif" alt="Professional minimal layout"></div>
+        </div>
+      </section>
+    </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div><strong style="color:var(--text)">HAWK ACCOUNTAX LTD</strong> • Company No. 13784917</div>
+          <div style="margin-top:6px">Registered office: 4 Charlton Street, Grays, England, RM20 4XU</div>
+        </div>
+        <div>
+          <a class="btn" href="#top">Back to top ↑</a>
+        </div>
+      </div>
+      <div style="margin-top:14px" class="fineprint">
+        © <span id="year"></span> HAWK ACCOUNTAX LTD. All rights reserved. • <a href="https://www.instagram.com/hawkaccountax?igsh=d3k5OXY3cGhiM3hn" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+    <a class="wa-float" href="https://wa.me/447424630446?text=Hi%20there%2C%20I%20am%20interested%20in%20your%20services" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg class="wa-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+      <path fill="currentColor" d="M19.11 17.53c-.26-.13-1.54-.76-1.78-.85-.24-.09-.41-.13-.59.13-.18.26-.68.85-.83 1.03-.15.18-.3.2-.56.07-.26-.13-1.1-.41-2.09-1.31-.77-.69-1.29-1.54-1.44-1.8-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.45.13-.15.18-.26.26-.43.09-.18.04-.33-.02-.46-.07-.13-.59-1.42-.81-1.95-.21-.5-.42-.43-.59-.44l-.5-.01c-.18 0-.46.07-.7.33-.24.26-.92.9-.92 2.2s.94 2.55 1.07 2.73c.13.18 1.86 2.84 4.5 3.98.63.27 1.12.43 1.5.55.63.2 1.2.17 1.66.1.5-.07 1.54-.63 1.76-1.24.22-.61.22-1.13.15-1.24-.07-.11-.24-.18-.5-.31Z"/>
+      <path fill="currentColor" d="M16.02 3.2c-7.03 0-12.75 5.58-12.75 12.45 0 2.2.6 4.35 1.75 6.23L3.2 28.8l7.1-1.84c1.83.98 3.9 1.5 5.99 1.5 7.03 0 12.75-5.58 12.75-12.45S23.05 3.2 16.02 3.2Zm0 23.15c-1.93 0-3.82-.52-5.46-1.51l-.39-.23-4.22 1.09 1.12-4.05-.26-.41c-1.12-1.76-1.71-3.79-1.71-5.9 0-5.72 4.83-10.37 10.9-10.37 6.07 0 10.9 4.65 10.9 10.37 0 5.72-4.83 10.37-10.9 10.37Z"/>
+    </svg>
+    <span class="sr-only">WhatsApp</span>
+  </a>
+</footer>
+
+  <script>
+    // Smooth anchor scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href');
+        if (!id || id === '#') return;
+        const el = document.querySelector(id);
+        if (!el) return;
+        e.preventDefault();
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // close mobile menu
+        const menu = document.getElementById('mobileMenu');
+        const btn = document.getElementById('menuBtn');
+        if (menu && menu.classList.contains('open')) {
+          menu.classList.remove('open');
+          if (btn) btn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        const open = mobileMenu.classList.toggle('open');
+        menuBtn.setAttribute('aria-expanded', String(open));
+      });
+    }
+
+    // Contact form -> mailto
+    const form = document.getElementById('contactForm');
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const data = new FormData(form);
+        const name = String(data.get('name') || '').trim();
+        const email = String(data.get('email') || '').trim();
+        const subject = String(data.get('subject') || '').trim();
+        const message = String(data.get('message') || '').trim();
+
+        const body = [
+          `Name: ${name}`,
+          `Email: ${email}`,
+          '',
+          message
+        ].join('\n');
+
+        const mailto = `mailto:office@hawkaccountax.co.uk?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.location.href = mailto;
+      });
+    }
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
