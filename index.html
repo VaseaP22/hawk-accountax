@@ -122,10 +122,10 @@
 
     /* Hero */
     .hero{
-      padding:90px 0 90px;
+      padding:140px 0 140px;
       background:
-        linear-gradient(rgba(11,18,32,.65), rgba(11,18,32,.75)),
-        url('3a7b9ffc-0fd9-4d56-848d-c24ff4c42493.jfif') center/cover no-repeat;
+        linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.75)),
+        url('background.jpg') center/cover no-repeat;
       border-radius:22px;
     }
     .hero-grid{
@@ -204,7 +204,29 @@
     .company-meta strong{color:var(--text); font-weight:600}
 
     /* Sections */
-    section{padding:34px 0}
+    section{
+      padding:60px 0;
+      position:relative;
+    }
+
+    /* Modern background sections */
+    #services{
+      background:
+        linear-gradient(rgba(0,0,0,.85), rgba(0,0,0,.9)),
+        url('desk.jpg') center/cover no-repeat;
+    }
+
+    #about{
+      background:
+        linear-gradient(rgba(0,0,0,.88), rgba(0,0,0,.92)),
+        url('c3362cf6-423a-452b-8e85-4364e8abd4e6.jpg') center/cover no-repeat;
+    }
+
+    #contact{
+      background:
+        linear-gradient(rgba(0,0,0,.9), rgba(0,0,0,.95)),
+        url('ff6c4c07-9348-4c9f-a18c-4076453be3ed.jpg') center/cover no-repeat;
+    }
     .section-head{display:flex; justify-content:space-between; align-items:flex-end; gap:16px; margin-bottom:16px}
     .section-head h2{margin:0; font-size:28px; letter-spacing:-.4px}
     .section-head p{margin:0; color:var(--muted); max-width:60ch}
@@ -555,22 +577,7 @@
         </div>
       </section>
     </div>
-        <section id="gallery" aria-label="Gallery">
-        <div class="section-head">
-          <div>
-            <h2>Our Professional Approach</h2>
-            <p>A clean, precise and professional environment that reflects how we handle your accounts.</p>
-          </div>
-        </div>
-        <div class="cards">
-          <div class="card" style="grid-column:span 6"><img src="3a7b9ffc-0fd9-4d56-848d-c24ff4c42493.jfif" alt="Professional workspace image"></div>
-          <div class="card" style="grid-column:span 6"><img src="020f959c-8ae5-4191-9824-973e7fb2b9db.jfif" alt="Minimal professional desk"></div>
-          <div class="card" style="grid-column:span 6"><img src="248097e8-d135-4a2e-a888-1b9190cc07d9.jfif" alt="Stationery and planning tools"></div>
-          <div class="card" style="grid-column:span 6"><img src="c3362cf6-423a-452b-8e85-4364e8abd4e6.jfif" alt="Notebook and pen"></div>
-          <div class="card" style="grid-column:span 12"><img src="ff6c4c07-9348-4c9f-a18c-4076453be3ed.jfif" alt="Professional minimal layout"></div>
-        </div>
-      </section>
-    </main>
+        </main>
 
   <footer>
     <div class="container">
